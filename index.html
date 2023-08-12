@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Red+Hat+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <title>Hello World Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            background-image: radial-gradient(#ffffff30 .7px, transparent 1px);
+            background-size: 20px 20px;
+            background-attachment: fixed;
+            /* Default font size for navbar options */
+        }
+        
+        h1 {
+            font-size: 130px;
+            padding-top: 1880px;
+            font-family: 'Red Hat Display', sans-serif;
+            /* Larger font size for 'Hello World' */
+        }
+        
+        nav {
+            display: flex;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            padding-bottom: 250px;
+            font-size: 25px;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        
+        nav a:hover {
+            color: lightgray;
+            transition: .2s ease-in-out;
+        }
+        
+        .about-me-section {
+            background-color: white;
+            padding: 30px;
+            padding-bottom: 50px;
+            text-align: center;
+            max-width: 800px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            box-shadow: 0px 0px 100px white;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        
+        .about-me-section h2 {
+            font-size: 32px;
+            color: black;
+        }
+        
+        .about-me-section p {
+            color: black;
+            font-size: 18px;
+            line-height: 1.6;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3s steps(40), blink-caret 0.5s step-end infinite;
+        }
+        /* Blink Caret Animation Keyframes */
+        
+        @keyframes blink-caret {
+            from,
+            to {
+                border-right-color: transparent;
+                /* Blink effect */
+            }
+            50% {
+                border-right-color: black;
+                /* Caret color */
+            }
+        }
+        
+        .about-me-section p1 {
+            color: black;
+            font-size: 18px;
+        }
+        
+        .skills-section {
+            padding: 40px 0;
+            text-align: center;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        
+        .skills-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .skill-item {
+            margin: 10px;
+            padding: 10px 20px;
+            border: 2px solid #ffffff;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fefeff;
+            transition: 0.2s ease-in-out;
+        }
+        
+        .skill-item:hover {
+            color: black;
+            background: white;
+            cursor: pointer;
+            box-shadow: 1px 1px 50px white;
+            transition: 0.3s ease-in-out;
+            font-size: 19px;
+        }
+        
+        .skills-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding-top: 180px;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .fade-in.fade-in-active {
+            opacity: 1;
+        }
+        /* Project Section */
+        
+        .project-section {
+            padding: 40px 0;
+            text-align: center;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        
+        .project-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .project-box {
+            background-color: rgb(255, 255, 255);
+            width: 24%;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(255, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            transition: .3s ease;
+        }
+        
+        .project-box:hover {
+            transform: translateY(-5px);
+            background-color: #ffffff;
+            transition: .3s ease-in-out;
+            box-shadow: 1px 1px 50px white;
+        }
+        
+        .project-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 20%;
+            box-shadow: 1px 1px 20px gray;
+            margin: 0 auto 10px;
+        }
+        
+        .project-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 10px;
+        }
+        
+        .project-description {
+            font-size: 16px;
+            color: #2a2a2a;
+        }
+        
+        .projects-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .project-box a {
+            text-decoration: none;
+        }
+        /* Contact Me Section */
+        
+        .contact-section {
+            padding: 40px 0;
+            font-family: 'Red Hat Display', sans-serif;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px;
+            font-size: 30px;
+            color: #000000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: .3s ease;
+        }
+        
+        .contact-icon:hover {
+            transform: translateY(-5px);
+            color: white;
+            background-color: white;
+            transition: .3s ease;
+            box-shadow: 0px 0px 50px white;
+        }
+        
+        .copyright {
+            font-size: 10px;
+            opacity: 40%;
+            font-family: 'Red Hat Display', sans-serif;
+        }
+        /* Custom Scroll Bar for Webkit Browsers (Chrome, Safari) */
+        
+         ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+         ::-webkit-scrollbar-thumb {
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+        }
+        
+         ::-webkit-scrollbar-track {
+            background-color: #000000;
+            border-radius: 6px;
+        }
+        /* Custom Scroll Bar for Mozilla Firefox */
+    </style>
+</head>
+
+<body>
+    <h1 id="home">" Hello World "</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <div class="about-me-section fade-in">
+            <h2>About Me</h2>
+            <div>
+                <p id="about-me-content">Hi! My name is <b>Rizwal Abrol</b>.</p>
+                <p1>I am currently pursuing B.Tech in Electronics and Communication at Shri Mata Vaishno Devi University in India. Interested in Data analytics and Data Science and looking forward to enhancing my skills in this respective field.
+                </p1>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="skills-section fade-in" id="skills">
+        <div class="skills-container">
+            <h2 class="skills-title">Skills</h2>
+            <ul class="skills-list">
+                <li class="skill-item">Machine Learning</li>
+                <li class="skill-item">NLP</li>
+                <li class="skill-item">Data Analysis</li>
+                <li class="skill-item">Python</li>
+                <li class="skill-item">C++</li>
+                <li class="skill-item">Tableau</li>
+                <li class="skill-item">Excel</li>
+                <li class="skill-item">Statistics</li>
+                <li class="skill-item">Jupyter Notebook</li>
+                <li class="skill-item">HTML & CSS</li>
+                <li class="skill-item">IOT</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="project-section fade-in" id="projects">
+        <h2 class="projects-title">Projects</h2>
+        <div class="project-container">
+
+            <div class="project-box">
+                <a href="https://github.com/Rizwal/Early-Stage-Diabetes-Prediction" target="_blank">
+                    <img class="project-image" src="project-1.jpg" alt="Project 1">
+                    <div class="project-title">Early Stage Diabetes Prediction</div>
+                    <div class="project-description"> To predict early-stage diabetes by analyzing patient symptoms by machine learning. </div>
+                </a>
+            </div>
+            <div class="project-box">
+                <a href="https://github.com/Rizwal/Movie-Recommender-System" target="_blank">
+                    <img class="project-image" src="project-2.jpg" alt="Project 2">
+                    <div class="project-title">Movie Recommender System</div>
+                    <div class="project-description">To provide personalized recommendations by suggesting the top 5 movies that best match a user's preferences.</div>
+                </a>
+            </div>
+            <div class="project-box">
+                <img class="project-image" src="project3.jpg" alt="Project 3">
+                <div class="project-title">COVID-19 Data Visualisation</div>
+                <div class="project-description">To create a comprehensive COVID-19 World Dashboard in Tableau</div>
+            </div>
+
+        </div>
+        <div>
+            <h3>and many more on github....</h3>
+        </div>
+    </section>
+    <section class="contact-section fade-in" id="contact">
+        <div class="contact-title">Contact Me</div>
+        <div class="contact-icons">
+            <div class="contact-icon">
+                <a href="https://www.linkedin.com/in/rizwal-abrol007/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="contact-icon">
+                <a href="https://github.com/Rizwal" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="contact-icon">
+                <a href="https://instagram.com/progen_rizwal?igshid=17zbk9bye0zpl" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="contact-icon">
+                <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+    </section>
+    <div class="copyright">
+        <h3>copyright@Rizwal_Abrol | Made using ChatGPT 3.5</h3>
+    </div>
+    <script>
+        // JavaScript for scroll effect
+        let prevScrollPos = window.pageYOffset;
+
+        window.addEventListener("scroll", function() {
+            const helloWorld = document.querySelector("h1");
+            const scrollY = window.pageYOffset;
+
+            // Calculate the new font size based on scroll position
+            const fontSize = 130 + scrollY / 5;
+            helloWorld.style.fontSize = `${fontSize}px`;
+
+            // Calculate the new opacity based on scroll position
+            const opacity = 1 - scrollY / 1000;
+            helloWorld.style.opacity = opacity;
+
+            // Reverse the scroll direction for font size change
+            if (scrollY > prevScrollPos) {
+                helloWorld.style.fontSize = `${Math.min(fontSize, 200)}px`;
+            } else {
+                helloWorld.style.fontSize = `${Math.max(fontSize, 130)}px`;
+            }
+
+            prevScrollPos = scrollY;
+        });
+
+        // JavaScript for typing animation
+        const aboutMeContent = document.getElementById('about-me-content');
+        const text = aboutMeContent.innerText;
+        let index = 1;
+
+        function typeText() {
+            aboutMeContent.innerText = text.slice(0, index);
+            index++;
+
+            if (index <= text.length) {
+                setTimeout(typeText, 100);
+            } else {
+                // Wait for 5 seconds before starting the typing animation again
+                setTimeout(() => {
+                    index = 1; // Reset the index for the next animation
+                    typeText();
+                }, 2000);
+            }
+        }
+
+        // Start the typing animation when the page loads
+        window.addEventListener('load', function() {
+            typeText();
+        });
+
+        const navbarLinks = document.querySelectorAll('nav a');
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const targetSectionId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetSectionId);
+
+                if (targetSection) {
+                    const offset = targetSection.offsetTop;
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        // Fade-in effect on scroll
+
+        const sections = document.querySelectorAll('.fade-in');
+
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-active');
+                } else {
+                    entry.target.classList.remove('fade-in-active');
+                }
+            });
+        }, {
+            threshold: 0.5 // Adjust the threshold as needed to control when the elements fade in
+        });
+
+        sections.forEach((section) => {
+            fadeInObserver.observe(section);
+        });
+    </script>
+</body>
+
+</html>
